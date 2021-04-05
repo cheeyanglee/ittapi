@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+ifneq (,$(filter x86,$(DEB_HOST_ARCH_CPU)))
+	X86 = yes
+	confflags += -DFORCE_32=ON
+endif
+confflags += -DCMAKE_BUILD_TYPE=Release
+
+%:
+	dh $@ 
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(confflags)
+
+override_dh_install:
+  ifeq (${X86},yes)
+	rm -r include/fortran/posix/x86_64
+  else
+	rm -r include/fortran/posix/x86
+  endif
+
+	dh_install

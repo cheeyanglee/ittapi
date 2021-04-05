@@ -1,0 +1,4 @@
+version=1
+opts="uversionmangle=s/.pre/~pre/,dversionmangle=s/@DEB_EXT@//,repacksuffix=+ds1" \
+   https://github.com/intel/ittapi/tags \
+   (?:.*?/)ittapi@ANY_VERSION@\.tar\.gz

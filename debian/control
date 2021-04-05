@@ -1,0 +1,32 @@
+Source: ittapi
+Section: libs
+Priority: optional
+Maintainer: Lee Chee Yang <chee.yang.lee@intel.com>
+Uploaders:
+ Lee Chee Yang <chee.yang.lee@intel.com>
+Build-Depends:
+ debhelper-compat (= 11),
+ cmake
+Standards-Version: 4.5.0
+Homepage: https://github.com/intel/ittapi
+Vcs-Browser: https://github.com/intel/ittapi
+Vcs-Git: https://github.com/intel/ittapi.git
+Rules-Requires-Root: no
+
+Package: itt-staticdev
+Architecture: amd64 i386
+Multi-Arch: same
+Depends:
+ ${misc:Depends}
+Description: Intel Instrumentation and Tracing Technology (ITT) and Just-In-Time (JIT) API
+
+Package: itt-dev
+Section: libdevel
+Architecture: amd64 i386
+Multi-Arch: same
+Depends:
+ itt-staticdev (= ${binary:Version}),
+ ${misc:Depends}
+Description: Intel Instrumentation and Tracing Technology (ITT) and Just-In-Time (JIT) API
+ .
+ This package includes files for development.

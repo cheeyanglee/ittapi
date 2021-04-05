@@ -1,0 +1,4 @@
+src/ittnotify/*.h usr/include/ittnotify
+include/*.h usr/include/ittnotify/
+include/legacy/*.h usr/include/ittnotify/legacy/
+include/fortran/posix/* usr/include/ittnotify/fortran/posix/
